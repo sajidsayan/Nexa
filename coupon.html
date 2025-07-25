@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nexa – Find Coupons</title>
+  <link rel="shortcut icon" href="assets/Nexa.png" type="image/x-icon">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d1c3f;
+      color: white;
+      padding-bottom: 100px;
+    }
+
+    .taskbar {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1100px;
+      height: 60px;
+      background: rgba(50, 0, 56, 0.377);
+      backdrop-filter: blur(25px);
+      border-radius: 30px;
+      box-shadow: 0 8px 40px rgba(48, 0, 58, 0.7),
+                  0 0 25px rgba(0, 80, 180, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 30px;
+      z-index: 1000;
+    }
+
+    .logo-container {
+      position: absolute;
+      left: 30px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-container img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .logo-text {
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: rgb(33, 0, 63);
+    }
+    .logo-text .fron {
+      font-weight: 700;
+      text-shadow: 0 0 6px #5300b3,
+                   0 0 12px #5300b3,
+                   0 0 18px #5300b3;
+    }
+    .logo-text .za {
+      font-weight: 700;
+      color: #8c00ff;
+      text-shadow: 0 0 8px #00ffff,
+                   0 0 14px #00dfff,
+                   0 0 20px #00bfff;
+    }
+
+    .nav {
+      display: flex;
+      gap: 30px;
+      font-weight: 600;
+    }
+    .nav a {
+      color: #a8c6ff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 8px 14px;
+      border-radius: 15px;
+      transition: background-color 0.3s ease,
+                  color 0.3s ease;
+    }
+    .nav a:hover {
+      background-color: rgba(85, 0, 155, 0.85);
+      color: #1a0025;
+      cursor: pointer;
+      box-shadow: 0 0 14px rgba(0, 150, 255, 0.85);
+    }
+    .nav a.active {
+      background-color: rgba(140, 0, 255, 0.85);
+      color: #020202;
+      box-shadow: 0 0 22px rgba(140, 0, 255, 0.85);
+    }
+
+    .gallery {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 40px;
+      padding: 50px 5vw;
+    }
+
+    .image-slot {
+      background: rgba(255, 255, 255, 0.04);
+      width: 500px;
+      max-width: 100%;
+      border-radius: 20px;
+      border: 2px dashed #8884;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      margin: auto;
+      color: #ccc;
+      font-size: 1rem;
+      user-select: none;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+    .image-slot img {
+      width: 500px;
+      height: 500px;
+      border-radius: 15px;
+      object-fit: cover;
+      box-shadow: 0 0 20px #3f51b5;
+    }
+    .image-slot a {
+      margin: 15px 0 5px 0;
+      color: #eee;
+      font-size: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .image-slot p {
+      margin: 0 0 15px 0;
+      font-size: 16px;
+      color: #bbb;
+      text-align: center;
+    }
+
+    /* Email Button */
+    .email-button-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .email-button-wrapper a {
+      padding: 14px 28px;
+      background: linear-gradient(45deg, #2c005c, #ae00ff);
+      border-radius: 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+      box-shadow: 0 0 15px #56017e;
+      transition: all 0.3s ease-in-out;
+      animation: pulse 2s infinite;
+    }
+
+    .email-button-wrapper a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #440058, 0 0 35px #7b00ff;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 0 15px #2e0041;
+      }
+      50% {
+        box-shadow: 0 0 25px #7b00ff;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .gallery {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 20px !important;
+        gap: 30px !important;
+      }
+
+      .image-slot {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 15px !important;
+      }
+
+      .image-slot img {
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      .taskbar {
+        display: none !important;
+      }
+
+      .hamburger {
+        display: block !important;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 35px;
+        height: 30px;
+        z-index: 10000;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 100%;
+        height: 4px;
+        margin: 6px 0;
+        background: white;
+        border-radius: 2px;
+        transition: 0.3s;
+      }
+
+      .mobile-nav {
+        display: none;
+        position: fixed;
+        top: 70px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.85);
+        padding: 20px;
+        border-radius: 10px;
+        flex-direction: column;
+        z-index: 9999;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.1);
+        transition: all 0.3s ease-in-out;
+      }
+      .mobile-nav.show {
+        display: flex !important;
+      }
+      .mobile-nav a {
+        color: white;
+        text-decoration: none;
+        margin: 10px 0;
+      }
+
+      .bg-glow-text {
+        font-size: 2rem !important;
+        top: 35% !important;
+        padding: 0 15px;
+        white-space: normal;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="style copy.css">
+  <link rel="stylesheet" href="media.css">
+</head>
+
+<body>
+  <!-- Taskbar -->
+  <div class="taskbar">
+    <div class="logo-container">
+      <img src="assets/Nexa.png" alt="Nexa Logo" />
+      <div class="logo-text">
+        <span class="fron">Ne</span><span class="za">xa</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="website.html">Website</a>
+      <a href="coupon.html" class="active">Coupon</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+
+  <!-- Hamburger & Mobile Nav -->
+  <div class="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+  <nav class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="website.html">Website</a>
+    <a href="coupon.html">Coupon</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <!-- Email Button -->
+  <div class="email-button-wrapper">
+    <a href="https://m.me/61577660735773" target="_blank">
+      Talk in messenger
+    </a>
+  </div>
+  <center>
+    <h2>No Coupon Available Yet😕</h2>
+    <p>Come on 22/11/2025</p>
+  </center>
+
+  <script src="script copy.js"></script>
+</body>
+</html>

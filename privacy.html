@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nexa – Privacy Policy</title>
+  <link rel="shortcut icon" href="assets/Nexa.png" type="image/x-icon">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d1c3f;
+      color: white;
+      padding-bottom: 100px;
+    }
+
+    .taskbar {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1100px;
+      height: 60px;
+      background: rgba(50, 0, 56, 0.377);
+      backdrop-filter: blur(25px);
+      border-radius: 30px;
+      box-shadow: 0 8px 40px rgba(48, 0, 58, 0.7),
+                  0 0 25px rgba(0, 80, 180, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 30px;
+      z-index: 1000;
+    }
+
+    .logo-container {
+      position: absolute;
+      left: 30px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-container img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .logo-text {
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: rgb(33, 0, 63);
+    }
+    .logo-text .fron {
+      font-weight: 700;
+      text-shadow: 0 0 6px #5300b3,
+                   0 0 12px #5300b3,
+                   0 0 18px #5300b3;
+    }
+    .logo-text .za {
+      font-weight: 700;
+      color: #8c00ff;
+      text-shadow: 0 0 8px #00ffff,
+                   0 0 14px #00dfff,
+                   0 0 20px #00bfff;
+    }
+
+    .nav {
+      display: flex;
+      gap: 30px;
+      font-weight: 600;
+    }
+    .nav a {
+      color: #a8c6ff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 8px 14px;
+      border-radius: 15px;
+      transition: background-color 0.3s ease,
+                  color 0.3s ease;
+    }
+    .nav a:hover {
+      background-color: rgba(85, 0, 155, 0.85);
+      color: #1a0025;
+      cursor: pointer;
+      box-shadow: 0 0 14px rgba(0, 150, 255, 0.85);
+    }
+    .nav a.active {
+      background-color: rgba(140, 0, 255, 0.85);
+      color: #020202;
+      box-shadow: 0 0 22px rgba(140, 0, 255, 0.85);
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    .privacy-section {
+      text-align: center;
+      margin-top: 100px;
+      padding: 20px 30px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .privacy-section h1 {
+      font-size: 3rem;
+      color: #ffffff;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #8c00ff;
+    }
+
+    .privacy-section p.intro {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      color: #ccc;
+    }
+
+    .privacy-section p.content {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #d4d4d4;
+      text-align: justify;
+    }
+
+    @media (max-width: 720px) {
+      .taskbar {
+        display: none !important;
+      }
+
+      .hamburger {
+        display: block !important;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 35px;
+        height: 30px;
+        z-index: 10000;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 100%;
+        height: 4px;
+        margin: 6px 0;
+        background: white;
+        border-radius: 2px;
+        transition: 0.3s;
+      }
+
+      .mobile-nav {
+        display: none;
+        position: fixed;
+        top: 70px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.85);
+        padding: 20px;
+        border-radius: 10px;
+        flex-direction: column;
+        z-index: 9999;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .mobile-nav.show {
+        display: flex !important;
+      }
+
+      .mobile-nav a {
+        color: white;
+        text-decoration: none;
+        margin: 10px 0;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="style copy.css">
+  <link rel="stylesheet" href="media.css">
+</head>
+
+<body>
+  <!-- Taskbar -->
+  <div class="taskbar">
+    <div class="logo-container">
+      <img src="assets/Nexa.png" alt="Nexa Logo" />
+      <div class="logo-text">
+        <span class="fron">Ne</span><span class="za">xa</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="website.html">Website</a>
+      <a href="coupon.html">Coupon</a>
+      <a href="about.html" class="active">About</a>
+    </nav>
+  </div>
+
+  <!-- Hamburger & Mobile Nav -->
+  <div class="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+  <nav class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="website.html">Website</a>
+    <a href="coupon.html">Coupon</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <!-- Privacy Policy Section -->
+  <div class="privacy-section">
+    <h1>Privacy Policy</h1>
+    <p class="content">
+      At Nexa, we are committed to maintaining the trust and confidence of our users. This Privacy Policy outlines how we handle your information, protect your privacy, and remain fully legal, ethical, and transparent in everything we do. We want you to understand that we do not engage in any form of scam, deception, or misuse of your data. Nexa is a premium platform offering high-quality websites for money with trust and transparency at its core.
+
+      From the moment you interact with our website or services, your privacy is treated with the utmost respect. Whether you're just browsing, contacting us, or purchasing a service, you are protected under international data and privacy standards. Nexa does not sell or trade your personal data to third parties. We use the information you voluntarily provide us (such as your name, email, or project details) only to deliver and improve our services. Your details stay with us, securely encrypted and protected.
+
+      Our platform uses secure HTTPS encryption for all transactions. Whether you're filling out a contact form or submitting payment, your communication with Nexa is protected against interception and misuse. We host on reputable servers with strong firewalls and DDoS protection. As a legal business, Nexa adheres to GDPR guidelines for European users and follows ethical data handling practices globally.
+
+      We make websites, that’s our job. We do not trick people into buying. You come to us because you want a professional website or service—whether it's for your business, brand, or passion. We clearly outline our pricing, services, and terms. We don’t hide fees or change terms without notice. Our team believes in long-term relationships with our clients. That's why we work hard to keep everything clear and honest.
+
+      Transparency also means giving you control. You can always request to see what data we have about you, ask for it to be corrected, or request deletion. If at any time you want to unsubscribe from emails or marketing, you can do so with a single click. Your peace of mind matters to us.
+
+      Children under the age of 13 are not our target users, and we do not knowingly collect information from them. If you believe we have mistakenly collected data from a child, please contact us immediately so we can remove it.
+
+      Our policy may evolve over time, especially as digital laws change. If there are any significant updates, we will notify you clearly either on our site or via email. You are encouraged to review this page occasionally to stay informed.
+
+      By using Nexa, you agree to this Privacy Policy. If you disagree with any part of it, you are free not to use our services, but we hope you’ll contact us to share your concerns so we can improve.
+
+      In summary, Nexa exists to serve users with professionalism, creativity, and integrity. We build beautiful websites, not shady schemes. We want to be your digital partner for years to come, and that starts with trust.
+
+      Thank you for choosing Nexa.
+    </p>
+  </div>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
