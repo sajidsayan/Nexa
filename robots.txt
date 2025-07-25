@@ -1,7 +1,4 @@
-# robots.txt for Nexa – website services
 User-agent: *
 Disallow:
 
-# Do not block any crawlers—allow full access
-# Sitemap location follows:
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://nexa-five.vercel.app/sitemap.xml
