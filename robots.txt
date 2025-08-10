@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://nexa-five.vercel.app/sitemap.xml
