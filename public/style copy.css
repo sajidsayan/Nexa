@@ -1,0 +1,209 @@
+/* General reset & defaults */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0d1c3f;
+  color: white;
+  padding-bottom: 100px; /* space for bottom taskbar */
+}
+
+/* Bottom Win12-style taskbar */
+.taskbar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1100px;
+  height: 60px;
+  background: rgba(50, 0, 56, 0.377);
+  backdrop-filter: blur(25px);
+  border-radius: 30px;
+  box-shadow: 0 8px 40px rgba(48, 0, 58, 0.7), 0 0 25px rgba(0, 80, 180, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo-container {
+  position: absolute;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-container img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.logo-text {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: rgb(33, 0, 63);
+}
+.logo-text .fron {
+  font-weight: 700;
+  text-shadow: 0 0 6px #5300b3, 0 0 12px #5300b3, 0 0 18px #5300b3;
+}
+.logo-text .za {
+  font-weight: 700;
+  color: #8c00ff;
+  text-shadow: 0 0 8px #00ffff, 0 0 14px #00dfff, 0 0 20px #00bfff;
+}
+
+/* Desktop nav */
+.nav {
+  display: flex;
+  gap: 30px;
+  font-weight: 600;
+}
+.nav a {
+  color: #a8c6ff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 8px 14px;
+  border-radius: 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.nav a:hover {
+  background-color: rgba(85, 0, 155, 0.85);
+  color: #1a0025;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(0, 150, 255, 0.85);
+}
+.nav a.active {
+  background-color: rgba(140, 0, 255, 0.85);
+  color: #020202;
+  box-shadow: 0 0 22px rgba(140, 0, 255, 0.85);
+}
+
+/* Mobile nav hidden by default */
+.mobile-nav {
+  display: none !important;
+}
+
+/* Hamburger hidden by default */
+.hamburger {
+  display: none;
+}
+
+/* Gallery section */
+.gallery {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 40px;
+  padding: 100px 5vw 50px;
+}
+.image-slot {
+  background: rgba(255, 255, 255, 0.04);
+  width: 460px;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 2px dashed #8884;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: #ccc;
+  font-size: 1rem;
+  user-select: none;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.image-slot img {
+  width: 450px;
+  height: 500px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 0 20px #3f51b5;
+}
+.image-slot h3 {
+  margin: 15px 0 5px 0;
+  color: #eee;
+  font-size: 20px;
+}
+.image-slot p {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  color: #bbb;
+  text-align: center;
+}
+
+/* -------- Responsive Design for Mobile -------- */
+@media (max-width: 720px) {
+  /* Hide bottom taskbar */
+  .taskbar {
+    display: none !important;
+  }
+  
+  /* Show hamburger */
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 9999;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 4px;
+    background: #fff;
+    margin: 6px 0;
+    border-radius: 4px;
+    transition: 0.3s ease;
+  }
+
+  /* Mobile nav styles */
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px #000;
+    z-index: 9998;
+  }
+
+  .mobile-nav.show {
+    display: flex;
+  }
+
+  .mobile-nav a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+  }
+
+  .mobile-nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  *,
+  *::before,
+  *:after {
+  box-sizing: border-box;
+  }
+
+}
+
